@@ -17,7 +17,6 @@ const RootStyle = styled('div')(({ theme }) => ({
     '&.Mui-focused': {
       width: 240,
       '& .MuiAutocomplete-inputRoot': {
-        boxShadow: theme.customShadows.z12
       }
     }
   },

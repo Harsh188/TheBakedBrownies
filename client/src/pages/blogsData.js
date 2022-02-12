@@ -1,4 +1,4 @@
-import faker from 'faker';
+// import faker from 'faker';
 // utils
 // import { mockImgCover } from '../utils/mockImages';
 
@@ -32,16 +32,16 @@ const POST_TITLES = [
 ];
 
 const posts = [...Array(23)].map((_, index) => ({
-  id: faker.datatype.uuid(),
+  id: Math.random(2,12323),
   cover: null,
   title: POST_TITLES[index + 1],
-  createdAt: faker.date.past(),
-  view: faker.datatype.number(),
-  comment: faker.datatype.number(),
-  share: faker.datatype.number(),
-  favorite: faker.datatype.number(),
+  createdAt: null,
+  view: 23,
+  comment: null,
+  share: 343,
+  favorite: 32,
   author: {
-    name: faker.name.findName(),
+    name: "Harshith",
     avatarUrl: `/static/mock-images/avatars/avatar_${index + 1}.jpg`
   }
 }));
