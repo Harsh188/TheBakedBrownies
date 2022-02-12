@@ -8,7 +8,7 @@ const marks = [
     label: 'Low',
   },
   {
-    value: 20,
+    value: 50,
     label: 'Medium',
   },
   {
