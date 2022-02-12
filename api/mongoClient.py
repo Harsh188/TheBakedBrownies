@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+import json
 
 client = MongoClient("mongodb+srv://TheBakedBrownies:<TheBakedBrownies420>@cluster0.ini1l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 
@@ -16,10 +17,14 @@ personDocument = {
   "reviews": [21321,21322,232323]
 }
 
+p_d_j = json.dumps(personDocument)
+
 print(type(personDocument))
+print(p_d_j)
 
 def get_person():
-	return personDocument
+	print(p_d_j)
+	return p_d_j
 
 def set_person():
 	p_id = people.insert_one(personDocument).inserted_id

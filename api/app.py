@@ -11,8 +11,8 @@ app = Flask(__name__)
 def members():
 	# member = get_person()
 	# print("member:",member)
-	set_person()
-	# return member
+	member = get_person()
+	return member
 
 if __name__ == "__main__":
 	app.run(debug=True)
