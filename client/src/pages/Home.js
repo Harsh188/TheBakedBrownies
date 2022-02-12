@@ -1,7 +1,7 @@
 import React from 'react'
 import Slider from '../components/slider'
 import Pref from '../components/prefrences'
-import { BlogPostCard } from '../components'
+// import { BlogPostCard } from '../components'
 
 
 function Home(){
@@ -16,7 +16,6 @@ function Home(){
 				</div>
 				<div className="Recipes">
 					<h2>Recipes</h2>
-					<BlogPostCard />
 				</div>
 			</div>
 		</>
