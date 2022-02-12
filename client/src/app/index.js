@@ -6,8 +6,11 @@ function App() {
 	const [member, setMember] = useState(0);
 
 	useEffect(()=>{
-		axios.get("http://localhost:5000/members")
-		.then(res =>  {console.log("yeet")})
+		axios.get("https://the-baked-brownies.herokuapp.com/members")
+		.then(res =>  {
+			console.log("yeet")
+			setMember(res)
+		})
 		.catch(error => {console.log(error)})
   	}, []);
 
