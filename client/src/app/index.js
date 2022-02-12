@@ -3,23 +3,25 @@ import axios from 'axios';
 
 
 function App() {
-	const [getMessage, setGetMessage] = useState({})
+	const [member, setMember] = useState(0);
 
 	useEffect(()=>{
-    	axios.get('https://the-baked-brownies.herokuapp.com/flask/hello').then(response => {
-      		console.log("SUCCESS", response)
-      		setGetMessage(response)
-    	}).catch(error => {
-      		console.log(error)
-    	})
-  	}, [])
+    	fetch("/members").then(
+    		response => response.json()
+    	).then(
+    		data => {
+    			setMember(data.member)
+    			console.log(data.member)
+    		}
+    	)
+  	}, []);
 
     return (
-        <>
-        	<div className = "App">
-        		<p>Hi there!</p>
-        	</div>
-        </>
+    	<>
+	    	<div className = "App">
+	    		<p>{member}</p>
+	    	</div>
+    	</>
     );
 }
 
