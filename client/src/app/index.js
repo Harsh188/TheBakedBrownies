@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import SignIn from '../pages/login/SignIn'
-//import SignInSide from '../pages/login';
+//import SignIn from '../pages/login/SignIn'
+import Slider from '../components/slider'
 
 function App() {
 	const [member, setMember] = useState(0);
@@ -25,8 +25,8 @@ function App() {
             <Router>
         
       	        <Routes>
-      		        <Route path='/login' exact component={SignIn}/>
-                    
+      		        
+                    <Route path='/' element = {<><Slider/></>} />
       	        </Routes>
         
             </Router>

@@ -5,19 +5,15 @@ import Slider from '@mui/material/Slider';
 const marks = [
   {
     value: 0,
-    label: '0°C',
+    label: 'Low',
   },
   {
     value: 20,
-    label: '20°C',
-  },
-  {
-    value: 37,
-    label: '37°C',
+    label: 'Medium',
   },
   {
     value: 100,
-    label: '100°C',
+    label: 'High',
   },
 ];
 
