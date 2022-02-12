@@ -28,7 +28,9 @@ function App() {
 	    	<div className = "App">
 	    		<BrowserRouter>
 	    			<Routes>
+
 	    				<Route path="/" element={<><NavSection /> <DiscreteSliderMarks/> <Home /> <goalButtons /></>}>
+
 	    					<Route path='/login' exact component={<SignIn />}/>
 	    				</Route>
 	    			</Routes>
