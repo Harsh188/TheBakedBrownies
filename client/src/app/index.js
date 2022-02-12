@@ -11,13 +11,11 @@ import axios from 'axios';
 
 
 function App() {
-	const [member, setMember] = useState(0);
 
 	useEffect(()=>{
-		axios.get("http://localhost:5000/members")
+		axios.get("http://localhost:5000")
 		.then(res =>  {
 			console.log("yeet")
-			setMember(res)
 		})
 		.catch(error => {console.log(error)})
   	}, []);

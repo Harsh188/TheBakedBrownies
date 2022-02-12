@@ -26,9 +26,9 @@ export default function DiscreteSliderMarks() {
     <Box sx={{ width: 300 }}>
       <Slider
         aria-label="Custom marks"
-        defaultValue={20}
+        defaultValue={50}
         getAriaValueText={valuetext}
-        step={10}
+        step={50}
         valueLabelDisplay="auto"
         marks={marks}
       />
