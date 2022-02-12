@@ -6,8 +6,9 @@ from mongoClient import *
 
 
 app = Flask(__name__)
+CORS(app)
 
-@app.route("/members")
+@app.route("/members", methods=['POST'])
 def members():
 	# member = get_person()
 	# print("member:",member)
