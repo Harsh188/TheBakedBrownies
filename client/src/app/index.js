@@ -6,14 +6,9 @@ function App() {
 	const [member, setMember] = useState(0);
 
 	useEffect(()=>{
-    	fetch("/members").then(
-    		response => response.json()
-    	).then(
-    		data => {
-    			setMember(data.member)
-    			console.log(data.member)
-    		}
-    	)
+		axios.get("http://localhost:5000/members")
+		.then(res =>  {console.log("yeet")})
+		.catch(error => {console.log(error)})
   	}, []);
 
     return (

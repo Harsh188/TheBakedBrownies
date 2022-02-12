@@ -8,12 +8,12 @@ from mongoClient import *
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/members", methods=['POST'])
+@app.route("/members", methods=['GET'])
 def members():
-	# member = get_person()
-	# print("member:",member)
 	member = get_person()
-	return member
+	print(member)
+
+	return jsonify({"member":"member"})
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run(host="0.0.0.0", threaded=True, port=5000, debug=True)
