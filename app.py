@@ -1,14 +1,19 @@
-from flask import Flask, send_from_directory
-from flask_restful import Api, Resource, reqparse
-from flask_cors import CORS #comment this on deployment
-from api.HelloApiHandler import HelloApiHandler
+# Import the required packages
+from flask import Flask
+from flask import jsonify
+from flask_cors import CORS
+from api import mongoClient
 
-app = Flask(__name__, static_url_path='', static_folder='client/build')
-CORS(app) #comment this on deployment
-api = Api(app)
 
-@app.route("/", defaults={'path':''})
-def serve(path):
-    return send_from_directory(app.static_folder,'index.html')
+app = Flask(__name__)
+CORS(app)
 
-api.add_resource(HelloApiHandler, '/flask/hello')
+@app.route("/members", methods=['GET'])
+def members():
+	member = mongoClient.get_person()
+	print(member)
+
+	return jsonify({"member":"member"})
+
+if __name__ == "__main__":
+	app.run(host="0.0.0.0", threaded=True, port=5000, debug=True)

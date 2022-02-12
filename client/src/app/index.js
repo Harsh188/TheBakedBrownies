@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -5,18 +6,19 @@ import SignIn from '../pages/login/SignIn'
 //import SignInSide from '../pages/login';
 
 function App() {
-	const [getMessage, setGetMessage] = useState({})
+	const [member, setMember] = useState(0);
 
 	useEffect(()=>{
-    	axios.get('http://localhost:5000/flask/hello').then(response => {
-      		console.log("SUCCESS", response)
-      		setGetMessage(response)
-    	}).catch(error => {
-      		console.log(error)
-    	})
-  	}, [])
+		axios.get("https://the-baked-brownies.herokuapp.com/members")
+		.then(res =>  {
+			console.log("yeet")
+			setMember(res)
+		})
+		.catch(error => {console.log(error)})
+  	}, []);
 
     return (
+
         <>
         	<div className = "App">
 
