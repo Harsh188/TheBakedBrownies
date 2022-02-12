@@ -28,7 +28,7 @@ export default function DiscreteSliderMarks() {
         aria-label="Custom marks"
         defaultValue={20}
         getAriaValueText={valuetext}
-        step={10}
+        step={50}
         valueLabelDisplay="auto"
         marks={marks}
       />
