@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Home } from '../pages'
+import { NavSection } from '../components'
+
 import axios from 'axios';
 
 
@@ -23,8 +25,7 @@ function App() {
 	    	<div className = "App">
 	    		<BrowserRouter>
 	    			<Routes>
-	    				<Route path="/" element={<Home />}>
-
+	    				<Route path="/" element={<><NavSection /> <Home /></>}>
 	    				</Route>
 	    			</Routes>
 	    		</BrowserRouter>
