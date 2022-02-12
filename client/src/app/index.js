@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from '../pages'
 import { NavSection } from '../components/navBar'
 import { SignIn } from '../pages/login'
-import Slider from '../components/slider'
+import DiscreteSliderMarks from '../components/slider'
+import goalButtons from '../components/goal/goalButtons'
 
 import axios from 'axios';
 
@@ -25,7 +26,9 @@ function App() {
 	    	<div className = "App">
 	    		<BrowserRouter>
 	    			<Routes>
-	    				<Route path="/" element={<><NavSection /><Home /></>}>
+
+	    				<Route path="/" element={<><NavSection /> <DiscreteSliderMarks/> <Home /> <goalButtons /></>}>
+
 	    					<Route path='/login' exact component={<SignIn />}/>
 	    				</Route>
 	    			</Routes>
