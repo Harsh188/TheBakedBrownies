@@ -4,9 +4,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Home } from '../pages'
 import { NavSection } from '../components'
+import SignIn from '../pages/login/SignIn'
 
 import axios from 'axios';
 
+//import SignInSide from '../pages/login';
 
 function App() {
 	const [member, setMember] = useState(0);
@@ -26,6 +28,7 @@ function App() {
 	    		<BrowserRouter>
 	    			<Routes>
 	    				<Route path="/" element={<><NavSection /> <Home /></>}>
+	    					<Route path='/login' exact component={SignIn}/>
 	    				</Route>
 	    			</Routes>
 	    		</BrowserRouter>
