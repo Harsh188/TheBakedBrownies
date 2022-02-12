@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Home } from '../pages'
-import { NavSection } from '../components'
-import SignIn from '../pages/login/SignIn'
+import { NavSection } from '../components/navBar'
+import { SignIn } from '../pages/login'
 
 import axios from 'axios';
 
@@ -28,7 +28,7 @@ function App() {
 	    		<BrowserRouter>
 	    			<Routes>
 	    				<Route path="/" element={<><NavSection /> <Home /></>}>
-	    					<Route path='/login' exact component={SignIn}/>
+	    					<Route path='/login' exact component={<SignIn />}/>
 	    				</Route>
 	    			</Routes>
 	    		</BrowserRouter>
