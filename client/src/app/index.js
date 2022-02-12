@@ -1,4 +1,8 @@
 import React, {useEffect, useState} from 'react'
+import ReactDOM from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { Home } from '../pages'
 import axios from 'axios';
 
 
@@ -6,7 +10,7 @@ function App() {
 	const [member, setMember] = useState(0);
 
 	useEffect(()=>{
-		axios.get("https://the-baked-brownies.herokuapp.com/members")
+		axios.get("http://localhost:5000/members")
 		.then(res =>  {
 			console.log("yeet")
 			setMember(res)
@@ -17,7 +21,13 @@ function App() {
     return (
     	<>
 	    	<div className = "App">
-	    		<p>{member}</p>
+	    		<BrowserRouter>
+	    			<Routes>
+	    				<Route path="/" element={<Home />}>
+
+	    				</Route>
+	    			</Routes>
+	    		</BrowserRouter>
 	    	</div>
     	</>
     );
