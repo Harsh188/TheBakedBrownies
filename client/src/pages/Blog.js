@@ -4,10 +4,10 @@ import { Link as RouterLink } from 'react-router-dom';
 // material
 import { Grid, Button, Container, Stack, Typography } from '@mui/material';
 // components
-import Page from '../components/Page';
-import { BlogPostCard, BlogPostsSort, BlogPostsSearch } from '../components/_dashboard/blog';
+// import Page from '../components/Page';
+import { BlogPostCard, BlogPostsSort, BlogPostsSearch } from '../components/blog';
 //
-import POSTS from '../_mocks_/blog';
+import POSTS from './blogsData';
 
 // ----------------------------------------------------------------------
 
@@ -21,11 +21,11 @@ const SORT_OPTIONS = [
 
 export default function Blog() {
   return (
-    <Page title="Dashboard: Blog | Minimal-UI">
+    <dev className="Dashboard: Blog | Minimal-UI">
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
-            Blog
+          Recipies
           </Typography>
           <Button
             variant="contained"
@@ -48,6 +48,6 @@ export default function Blog() {
           ))}
         </Grid>
       </Container>
-    </Page>
+    </dev>
   );
 }
