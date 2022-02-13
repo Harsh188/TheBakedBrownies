@@ -6,7 +6,7 @@ import { Home } from '../pages'
 import { NavSection } from '../components/navBar'
 import { SignIn } from '../pages/login'
 import DiscreteSliderMarks from '../components/slider'
-import goalButtons from '../components/goal/goalButtons'
+// import goalButtons from '../components/goal/goalButtons'
 
 import axios from 'axios';
 
@@ -27,7 +27,7 @@ function App() {
 	    		<BrowserRouter>
 	    			<Routes>
 
-	    				<Route path="/" element={<><NavSection /> <DiscreteSliderMarks/> <Home /> <goalButtons /></>}>
+	    				<Route path="/" element={<><NavSection /> <DiscreteSliderMarks/> <Home /> </>}>
 
 	    					<Route path='/login' exact component={<SignIn />}/>
 	    				</Route>

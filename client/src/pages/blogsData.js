@@ -2,7 +2,13 @@
 // utils
 // import { mockImgCover } from '../utils/mockImages';
 
-// ----------------------------------------------------------------------
+import axios from 'axios';
+
+const TITLES = [];
+const URLS = [];
+const INGRS = [];
+const NURT = [];
+const ID = [];
 
 const POST_TITLES = [
   'Whiteboard Templates By Industry Leaders',
@@ -31,10 +37,24 @@ const POST_TITLES = [
   'How to Animate a SVG with border-image'
 ];
 
-const posts = [...Array(23)].map((_, index) => ({
-  id: Math.random(2,12323),
-  cover: null,
-  title: POST_TITLES[index + 1],
+const getBlogsData = async () => {
+  try {
+    const res = await axios.get("http://localhost:5000/recipes");
+    console.log("working")
+      console.log(res['data'])
+      for(let i =0; i<10; i++){
+        console.log(res['data'][i])
+        TITLES.push(res['data'][i]['recipe_name'])
+        URLS.push(res['data'][i]['image_url'])
+        INGRS.push(res['data'][i]['ingredients'])
+        NURT.push(res['data'][i]['nutritions'])
+        ID.push(res['data'][i]['recipe_id'])
+      }
+      console.log(TITLES)
+      const posts = [...Array(10)].map((_, index) => ({
+  id: ID[index + 1],
+  cover: URLS[index + 1],
+  title: TITLES[index + 1],
   createdAt: null,
   view: 23,
   comment: null,
@@ -44,6 +64,16 @@ const posts = [...Array(23)].map((_, index) => ({
     name: "Harshith",
     avatarUrl: `/static/mock-images/avatars/avatar_${index + 1}.jpg`
   }
-}));
+  }));
+      console.log(posts)
+      return posts;
 
-export default posts;
+
+  } catch(err) {
+    throw {};
+
+  }
+
+}
+
+export default getBlogsData;

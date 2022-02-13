@@ -15,6 +15,7 @@ import { Box, Link, Card, Grid, Avatar, Typography, CardContent } from '@mui/mat
 
 // ----------------------------------------------------------------------
 
+
 const CardMediaStyle = styled('div')({
   position: 'relative',
   paddingTop: 'calc(100% * 3 / 4)'
@@ -60,7 +61,7 @@ BlogPostCard.propTypes = {
   index: PropTypes.number
 };
 
-function BlogPostCard({ post, index }) {
+export default function BlogPostCard({ post, index }) {
   const { cover, title, view, comment, share, author, createdAt } = post;
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
@@ -168,5 +169,3 @@ function BlogPostCard({ post, index }) {
     </Grid>
   );
 }
-
-export default BlogPostCard;
