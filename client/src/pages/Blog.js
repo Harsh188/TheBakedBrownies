@@ -7,7 +7,11 @@ import { Grid, Button, Container, Stack, Typography } from '@mui/material';
 // import Page from '../components/Page';
 import { BlogPostCard, BlogPostsSort, BlogPostsSearch } from '../components/blog';
 //
-import POSTS from './blogsData';
+import getBlogsData from './blogsData';
+
+import axios from 'axios';
+import React, {useEffect, useState} from 'react'
+
 
 // ----------------------------------------------------------------------
 
@@ -17,28 +21,40 @@ const SORT_OPTIONS = [
   { value: 'oldest', label: 'Oldest' }
 ];
 
+
 // ----------------------------------------------------------------------
 
-export default function Blog() {
+
+async function Blog() {
+
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(async ()=> {
+      setRecipes(await getBlogsData());
+    }, []);
+
   return (
-    <dev className="Dashboard: Blog | Minimal-UI">
+    <>
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
-          Recipies
+          Recipes
           </Typography>        
         </Stack>
 
         <Stack mb={5} direction="row" alignItems="center" justifyContent="space-between">
-          <BlogPostsSearch posts={POSTS} />
+          <BlogPostsSearch posts={recipes} />
         </Stack>
 
         <Grid container spacing={3}>
-          {POSTS.map((post, index) => (
+          {recipes.map((post, index) => (
             <BlogPostCard key={post.id} post={post} index={index} />
           ))}
         </Grid>
       </Container>
-    </dev>
+    </>
   );
 }
+
+
+export default Blog;

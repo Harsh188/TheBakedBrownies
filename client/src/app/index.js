@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-//import NavSection from '../components/navBar/index'
+import NavSection from '../components/navBar/index'
 import { SignIn } from '../pages/login'
 import Pref from '../components/prefrences'
-
 import axios from 'axios';
+import Home from '../pages/Home'
 
 
 function App() {
@@ -22,8 +22,10 @@ function App() {
 	    	<div className = "App">
 	    		<BrowserRouter>
 	    			<Routes>
-
 	    				<Route path="/" element={<> <Pref /> </>}>
+
+	    				<Route path="/" element={<><NavSection /> <Home /> </>}>
+
 
 	    				<Route path='/login' exact component={<SignIn />}/>
 	    				</Route>
