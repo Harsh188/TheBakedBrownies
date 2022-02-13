@@ -14,7 +14,7 @@ function Home(){
 		<>
 			<div>
 				<h1>Home</h1>
-				<div className = "Prefrences">
+				<div className = "Preferences">
 					<h2>Prefrences</h2>
 					<Pref/>
 				</div>

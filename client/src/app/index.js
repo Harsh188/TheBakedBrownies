@@ -1,12 +1,8 @@
-import React, {useEffect, useState} from 'react'
-import ReactDOM from "react-dom";
+import React, {useEffect, useState} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import { Home } from '../pages'
-import { NavSection } from '../components/navBar'
+//import NavSection from '../components/navBar/index'
 import { SignIn } from '../pages/login'
-import DiscreteSliderMarks from '../components/slider'
-import goalButtons from '../components/goal/goalButtons'
+import Pref from '../components/prefrences'
 
 import axios from 'axios';
 
@@ -27,9 +23,9 @@ function App() {
 	    		<BrowserRouter>
 	    			<Routes>
 
-	    				<Route path="/" element={<><NavSection /> <DiscreteSliderMarks/> <Home /> <goalButtons /></>}>
+	    				<Route path="/" element={<> <Pref /> </>}>
 
-	    					<Route path='/login' exact component={<SignIn />}/>
+	    				<Route path='/login' exact component={<SignIn />}/>
 	    				</Route>
 	    			</Routes>
 	    		</BrowserRouter>
