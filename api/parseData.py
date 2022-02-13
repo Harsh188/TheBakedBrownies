@@ -7,13 +7,14 @@ recipes = pd.read_csv("./data/recipes_slice.csv")
 print(ratings.head())
 print(recipes.head())
 
+recipes_mod = recipes.iloc[:10]
+recipes_mod_t = recipes_mod.T
+
 for col in recipes.columns:
     print(col)
 
 def getRecipes():
-	recipes_mod = recipes.loc[:4]
-	print(recipes_mod.values.tolist())
-	return recipes_mod.to_dict()
+	return recipes_mod_t.to_dict()
 
 def getRatings():
-	return ratings.values.tolist()
+	return ratings.tolist()
