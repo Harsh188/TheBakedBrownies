@@ -1,13 +1,16 @@
 import pandas as pd
 import json
+import recommender
 
 ratings = pd.read_csv("./data/ratings_slice.csv")
 recipes = pd.read_csv("./data/recipes_slice.csv")
 
-print(ratings.head())
-print(recipes.head())
+#print(ratings.head())
+#print(recipes.head())
 
-recipes_mod = recipes.iloc[:10]
+#recipes_mod = recipes.iloc[:10]
+
+recipes_mod = recommender.similarity(recommender.user_input, recommender.recipe_matrix)
 recipes_mod_t = recipes_mod.T
 
 for col in recipes.columns:

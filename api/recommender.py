@@ -51,6 +51,7 @@ def similarity(user_input, recipe_matrix):
         df_slice.loc[len(df_slice.index)] = df_recipe.loc[id] 
     return df_slice
 
-print(similarity([40, 400, 40, 400, 40, 0.4, 4], recipe_matrix))
+user_input = [40, 400, 40, 400, 40, 0.4, 4]
+print(similarity(user_input, recipe_matrix))
 
 
